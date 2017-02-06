@@ -51,6 +51,42 @@ cheatsheet do
         END
     end
   end
+  category do
+    id 'Java Streams Usage'
+    entry do
+        name 'Transforming a list of items'
+        notes <<-'END'
+        ```java
+        return list.stream().map( this::buildItem).collect( Collectors.toList());
+        ```
+        END
+    end
+  end
+  category do
+    id 'Java Optional Usage'
+    entry do
+        name 'Conditional test for non-null value'
+        notes <<-'END'
+        Invoking a method on the variable with no return value
+        
+        ```java
+        opt.ifPresent(this::print);
+        ```
+        
+        Passing the (non-null) variable into method with no return value
+        
+        ```java
+        opt.ifPresent(x -> print(x));
+        ```
+        
+        Passing the (non-null) variable into method and returning a result (and with value for null)
+        
+        ```java
+        opt.map(y -> y ^ 2).orElse( -1);
+        ```
+        END
+    end
+  end
   notes <<-'END'
     * Based on a [cheat sheet](http://fuckingjavalambdasyntax.com/) by [Alex Florescu](http://florescu.org/)
   END
